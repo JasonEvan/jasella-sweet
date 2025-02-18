@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+#background-main {
+  background-image: url("/butterfly.gif");
+}
+
+.font-styling {
+  font-family: "Playfair Display";
+}
+
+.font-secondary {
+  font-family: "Great Vibes";
+  font-size: 2.5rem;
+  /* font-family: "Playwrite GB S"; */
 }

@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model guests {
+  id              Int     @id @default(autoincrement())
+  name            String  @db.VarChar(50)
+  code            String  @unique @db.VarChar(100)
+  personInvited   Int
+  personAttended  Int     @default(0)
+  isAlreadyFilled Boolean @default(false)
+}
+
+model wishes {
+  id   Int    @id @default(autoincrement())
+  wish String @db.LongText
+  name String @db.VarChar(50)
+}
