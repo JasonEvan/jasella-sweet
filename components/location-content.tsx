@@ -28,9 +28,9 @@ export default function Location() {
           <span>Time: 17.00</span>
           <span>Location: Sixteen 8</span>
           <span>Dresscode:</span>
-          <div className="flex flex-col text-center">
-            <span>Guest: White</span>
-            <span>Family: Rose Gold</span>
+          <div className="flex flex-col text-start">
+            <span className="ms-5">Guest: White</span>
+            <span className="ms-5">Family: Rose Gold</span>
           </div>
         </div>
       </div>

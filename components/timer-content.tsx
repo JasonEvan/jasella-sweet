@@ -5,7 +5,7 @@ interface CustomCSSProperties extends React.CSSProperties {
 }
 
 export default function Timer() {
-  const hariH = new Date("Mar 8, 2025").getTime();
+  const hariH = new Date("Mar 8, 2025 17:00:00").getTime();
   const [day, setDay] = useState<number>(0);
   const [hours, setHours] = useState<number>(0);
   const [min, setMin] = useState<number>(0);
