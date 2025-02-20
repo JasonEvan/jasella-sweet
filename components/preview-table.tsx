@@ -8,7 +8,7 @@ export default function PreviewTable() {
   const [jumlahHalaman, setJumlahHalaman] = useState<number>(0);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/wish/total`, {
+    fetch("/api/wish/total", {
       cache: "no-store",
     })
       .then((res) => res.json())
@@ -19,7 +19,7 @@ export default function PreviewTable() {
   }, [totalData]);
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/wish/paginate?p=${currPage}`, {
+    fetch(`/api/wish/paginate?p=${currPage}`, {
       cache: "no-store",
     })
       .then((res) => res.json())

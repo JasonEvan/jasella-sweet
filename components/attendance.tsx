@@ -26,7 +26,7 @@ export default function Attendance({
       confirmButtonText: "Yes, I'm sure",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/guest/${code}`, {
+        fetch(`/api/guest/${code}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -82,7 +82,7 @@ export default function Attendance({
       confirmButtonText: "Yes, I'm sure",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/guest/${code}`, {
+        fetch(`/api/guest/${code}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

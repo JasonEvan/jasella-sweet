@@ -25,20 +25,17 @@ export default function GiveWish({ name }: { name: string }) {
     try {
       const sanitizedName = DOMPurify.sanitize(tempName);
       const sanitizedWish = DOMPurify.sanitize(wish);
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BE_URL}/api/wish`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: sanitizedName,
-            wish: sanitizedWish,
-          }),
-          cache: "no-store",
-        }
-      );
+      const response = await fetch("/api/wish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: sanitizedName,
+          wish: sanitizedWish,
+        }),
+        cache: "no-store",
+      });
 
       if (response.status == 200) {
         setTempName("");

@@ -27,7 +27,11 @@ export default function Location() {
           <span>Date: March 8th, 2025</span>
           <span>Time: 17.00</span>
           <span>Location: Sixteen 8</span>
-          <span>Dresscode: White</span>
+          <span>Dresscode:</span>
+          <div className="flex flex-col text-center">
+            <span>Guest: White</span>
+            <span>Family: Rose Gold</span>
+          </div>
         </div>
       </div>
     </div>

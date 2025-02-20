@@ -14,6 +14,7 @@ import GiveWish from "@/components/give-wishes";
 import Attendance from "@/components/attendance";
 import { IGuestAttendance } from "../lib/dto";
 import { ToastContainer } from "react-toastify";
+import Closing from "@/components/closing";
 
 function App() {
   const code = useRef<string>(null);
@@ -47,7 +48,7 @@ function App() {
     code.current = searchParams.get("code");
 
     if (code.current) {
-      fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/guest/${code.current}`, {
+      fetch(`/api/guest/${code.current}`, {
         cache: "no-store",
       })
         .then((res) => res.json())
@@ -76,11 +77,11 @@ function App() {
         <Gallery
           title="See My Gallery"
           images={[
+            "foto5.jpg",
             "foto1.jpg",
             "foto2.jpg",
             "foto3.jpg",
             "foto4.jpg",
-            "foto5.jpg",
           ]}
           otherClass="mb-44"
         />
@@ -90,12 +91,14 @@ function App() {
           title="Other Gallery"
           images={[
             "foto6.jpg",
-            "foto7.jpg",
             "foto8.jpg",
+            "foto7.jpg",
             "foto9.jpg",
             "foto10.jpg",
           ]}
+          otherClass="mb-40"
         />
+        <Closing />
       </Background>
       <ToastContainer />
     </>
