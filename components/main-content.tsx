@@ -4,7 +4,7 @@ export default function Home({ handlePlay }: { handlePlay: () => void }) {
   return (
     <div className="text-white flex flex-col items-center h-screen z-10 justify-center mb-32">
       <div className="mb-10" data-aos="fade-up">
-        <span className="font-styling">Are you ready for:</span>
+        <span className="font-styling">You are invited to attend:</span>
       </div>
       <div className="flex flex-col lg:flex-row text-center font-normal font-styling">
         <span className="text-7xl mb-2" data-aos="fade-up" data-aos-delay="300">
