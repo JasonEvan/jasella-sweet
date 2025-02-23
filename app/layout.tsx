@@ -45,6 +45,21 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
           rel="stylesheet"
         />
+
+        <meta
+          property="og:title"
+          content="Jasella Sweet Seventeenth Bday Party"
+        />
+        <meta
+          property="og:description"
+          content="Give your wishes here and confirm your attendance"
+        />
+        <meta
+          property="og:image"
+          content="https://jasella-sweet-17th.site/img/foto5.jpg"
+        />
+        <meta property="og:url" content="https://jasella-sweet-17th.site/" />
+        <meta property="og:type" content="website" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

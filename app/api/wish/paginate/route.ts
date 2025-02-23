@@ -14,7 +14,9 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BE_URL}/api/wish/total`);
+  const res = await fetch(`/api/wish/total`, {
+    cache: "no-store",
+  });
   const { data: count } = await res.json();
   const totalPage = Math.ceil(count / 5.0);
   if (activePage > totalPage) {
