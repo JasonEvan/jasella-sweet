@@ -14,11 +14,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const res = await fetch(new URL(`/api/wish/total`, request.nextUrl.origin), {
-    cache: "no-store",
-  });
-
-  const { data: count } = await res.json();
+  const count = await prisma.wishes.count();
   const totalPage = Math.ceil(count / 5.0);
   if (activePage > totalPage) {
     return NextResponse.json(
