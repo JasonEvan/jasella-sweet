@@ -56,7 +56,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://jasella-sweet-17th.site/img/foto5.jpg"
+          content="https://jasella-sweet-17th.site/img/preview.jpg"
         />
         <meta property="og:url" content="https://jasella-sweet-17th.site/" />
         <meta property="og:type" content="website" />

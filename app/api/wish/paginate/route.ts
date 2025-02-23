@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const res = await fetch(`/api/wish/total`, {
+  const res = await fetch(new URL(`/api/wish/total`, request.nextUrl.origin), {
     cache: "no-store",
   });
   const { data: count } = await res.json();
