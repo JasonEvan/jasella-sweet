@@ -18,15 +18,6 @@ export async function GET(request: NextRequest) {
     cache: "no-store",
   });
 
-  if (!res.ok) {
-    return NextResponse.json(
-      {
-        message: "",
-      },
-      { status: res.status }
-    );
-  }
-
   const { data: count } = await res.json();
   const totalPage = Math.ceil(count / 5.0);
   if (activePage > totalPage) {
