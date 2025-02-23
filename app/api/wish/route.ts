@@ -6,7 +6,7 @@ import { z } from "zod";
 export async function GET() {
   const prisma = PrismaService.getInstance();
 
-  const wishes = prisma.wishes.findMany();
+  const wishes = await prisma.wishes.findMany();
 
   return NextResponse.json(
     {
