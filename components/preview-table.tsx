@@ -12,20 +12,30 @@ export default function PreviewTable() {
       cache: "no-store",
     })
       .then((res) => res.json())
-      .then((res) => setTotalData(res.data))
+      .then((res) => {
+        setTotalData(res.data);
+        setJumlahHalaman(Math.ceil(res.data / 5));
+      })
       .catch((err) => console.info(err));
-
-    setJumlahHalaman(Math.ceil(totalData / 5));
   }, [totalData]);
 
   useEffect(() => {
     fetch(`/api/wish/paginate?p=${currPage}`, {
       cache: "no-store",
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to fetch data");
+        return res.json();
+      })
       .then((res) => setCurrPageData(res.data))
       .catch((err) => console.info(err));
   }, [currPage]);
+
+  useEffect(() => {
+    if (currPage > jumlahHalaman && jumlahHalaman > 0) {
+      setCurrPage(1);
+    }
+  }, [jumlahHalaman, currPage]);
 
   return (
     <div className="mb-44">
